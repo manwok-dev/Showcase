@@ -58,30 +58,20 @@ Generell habe ich versucht viel Wert darauf zu legen Klassen und Objekte so anzu
 So lässt sich zb der Ork ganz leicht durch einen anderen Gegner austauschen, welcher komplett andere Attribute haben kann.
 Auch die Items lassen sich in wenigen Handschlägen erstellen und sind, aufgrund ihrer vererbten Eigenschaften vielseitig einsetzbar.
 
-![Screenshot](sc_01)
+![Screenshot](Screenshots/sc_01.png)
 
+![Screenshot](Screenshots/sc_02.png)
 
+![Screenshot](Screenshots/sc_03.png)
 
-![Screenshot](sc_02)
+![Screenshot](Screenshots/sc_04.png)
 
+![Screenshot](Screenshots/sc_05.png)
 
+![Screenshot](Screenshots/sc_06.png)
 
-![Screenshot](sc_03)
+![Screenshot](Screenshots/sc_07.png)
 
+![Screenshot](Screenshots/sc_08.png)
 
-![Screenshot](sc_04)
-
-
-![Screenshot](sc_05)
-
-
-![Screenshot](sc_06)
-
-
-![Screenshot](sc_07)
-
-
-![Screenshot](sc_08)
-
-
-![Screenshot](sc_09)
+![Screenshot](Screenshots/sc_09.png)
