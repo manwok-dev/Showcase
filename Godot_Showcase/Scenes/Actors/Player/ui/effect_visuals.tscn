@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bfp58a04mjoyn"]
+
+[ext_resource type="Texture2D" uid="uid://bikargura4jqb" path="res://Assets/Single/Items/Sword.png" id="1_l7c5h"]
+[ext_resource type="Script" uid="uid://t77p7vu0hv42" path="res://Scenes/Actors/Player/ui/effect_visuals.gd" id="1_rd3g8"]
+
+[node name="EffectVisuals" type="Control" unique_id=53803024]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rd3g8")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=940238275]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 23.0
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1721441654]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "3"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1865125354]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_l7c5h")

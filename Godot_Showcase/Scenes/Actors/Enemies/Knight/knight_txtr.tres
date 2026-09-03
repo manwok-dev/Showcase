@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="actor_txtr_class" format=3 uid="uid://gdubxcyx1gj3"]
+
+[ext_resource type="Texture2D" uid="uid://cpdrnd5jf0vbv" path="res://Assets/Single/Actors/Enemies/Goblin/ork1.png" id="1_khdvm"]
+[ext_resource type="Script" uid="uid://cf7qht3kndqqk" path="res://Scenes/Actors/Class/actor_txtr_class.gd" id="2_kt73b"]
+
+[resource]
+script = ExtResource("2_kt73b")
+idle_txtr = ExtResource("1_khdvm")
+coll_layer = 3
+coll_mask = 1
+coll_radius = 3
+coll_height = 12
+metadata/_custom_type_script = "uid://cf7qht3kndqqk"

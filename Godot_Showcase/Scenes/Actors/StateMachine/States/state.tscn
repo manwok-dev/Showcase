@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cb8mma8m67frb"]
+
+[ext_resource type="Script" uid="uid://qet2c1t3njrw" path="res://Scenes/Actors/StateMachine/States/p_walk_state.gd" id="1_xexo6"]
+
+[node name="Walk" type="Node" unique_id=486280440]
+script = ExtResource("1_xexo6")

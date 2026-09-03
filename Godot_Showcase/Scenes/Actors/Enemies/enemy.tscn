@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bisrw24cfbrgp"]
+
+[ext_resource type="Script" uid="uid://b32wyqhygivfd" path="res://Scenes/Actors/Enemies/enemy.gd" id="1_oktmh"]
+[ext_resource type="PackedScene" uid="uid://ctd60jed40bpq" path="res://Scenes/Utility/EffectManager/effect_manager.tscn" id="2_jr36a"]
+[ext_resource type="Resource" uid="uid://b63lisjqwv8r1" path="res://Scenes/Actors/Enemies/Knight/knight_stats.tres" id="3_qs624"]
+[ext_resource type="Resource" uid="uid://gdubxcyx1gj3" path="res://Scenes/Actors/Enemies/Knight/knight_txtr.tres" id="3_ttwkn"]
+[ext_resource type="Texture2D" uid="uid://cmjrujooy1w47" path="res://Assets/Single/Actors/Enemies/knight.png" id="4_j4qqw"]
+[ext_resource type="PackedScene" uid="uid://bg8hyo067whgf" path="res://Scenes/Actors/StateMachine/state_machine.tscn" id="6_56424"]
+[ext_resource type="PackedScene" uid="uid://cb8mma8m67frb" path="res://Scenes/Actors/StateMachine/States/state.tscn" id="7_knekg"]
+[ext_resource type="Script" uid="uid://pr6g32y07wrh" path="res://Scenes/Actors/StateMachine/States/e_idle_state.gd" id="8_knekg"]
+[ext_resource type="Script" uid="uid://bkfifxix7fkit" path="res://Scenes/Actors/StateMachine/States/e_engage.gd" id="9_vdxgo"]
+[ext_resource type="Script" uid="uid://covwtlybv1nrl" path="res://Scenes/Actors/StateMachine/States/e_attack.gd" id="10_wujlo"]
+[ext_resource type="PackedScene" uid="uid://bqxu8ojjltmo6" path="res://Scenes/Utility/Hit-Hurtbox/hurtbox.tscn" id="12_vdd4f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttwkn"]
+resource_local_to_scene = true
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knekg"]
+resource_local_to_scene = true
+radius = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bp6la"]
+resource_local_to_scene = true
+radius = 6.0
+height = 12.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=686188719 node_paths=PackedStringArray("effect_manager", "state_machine") groups=["Enemy"]]
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+script = ExtResource("1_oktmh")
+txtr_res = ExtResource("3_ttwkn")
+stats = ExtResource("3_qs624")
+effect_manager = NodePath("EffectManager")
+state_machine = NodePath("StateMachine")
+
+[node name="CollisionArea" type="CollisionShape2D" parent="." unique_id=1397494955]
+position = Vector2(-1, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_ttwkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624628122]
+position = Vector2(0, -6)
+texture = ExtResource("4_j4qqw")
+
+[node name="EffectManager" parent="." unique_id=455589334 instance=ExtResource("2_jr36a")]
+
+[node name="StateMachine" parent="." unique_id=683361900 node_paths=PackedStringArray("initial_state") instance=ExtResource("6_56424")]
+initial_state = NodePath("Idle")
+
+[node name="Idle" parent="StateMachine" unique_id=486280440 instance=ExtResource("7_knekg")]
+script = ExtResource("8_knekg")
+state_name = "Idle"
+new_state_1 = "Engage"
+new_state_2 = "Attack"
+
+[node name="Engage" parent="StateMachine" unique_id=1504749196 instance=ExtResource("7_knekg")]
+script = ExtResource("9_vdxgo")
+state_name = "Engage"
+new_state_1 = "Idle"
+cooldown_time = 0.5
+
+[node name="Attack" parent="StateMachine" unique_id=1483368490 instance=ExtResource("7_knekg")]
+script = ExtResource("10_wujlo")
+state_name = "Attack"
+new_state_1 = "Idle"
+new_state_2 = "Engage"
+cooldown_time = 1.0
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=176029016]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=765208990]
+shape = SubResource("CircleShape2D_knekg")
+debug_color = Color(1, 0, 0.1254902, 0.20784314)
+
+[node name="PathfinderNavigationAgent" type="NavigationAgent2D" parent="." unique_id=2074439917]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0.22745098, 1)
+
+[node name="Hurtbox" parent="." unique_id=894251819 instance=ExtResource("12_vdd4f")]
+
+[node name="CollisionShape2D" parent="Hurtbox/Area2D" parent_id_path=PackedInt32Array(894251819, 300073172) index="0" unique_id=631586056]
+shape = SubResource("CapsuleShape2D_bp6la")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1454672260]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=250393958]
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+
+[editable path="Hurtbox"]

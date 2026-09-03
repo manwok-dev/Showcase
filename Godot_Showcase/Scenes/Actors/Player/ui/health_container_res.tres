@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ui_container_class" format=3 uid="uid://d04kh76tyhw6u"]
+
+[ext_resource type="Script" uid="uid://vnxjfhe2a0u8" path="res://Scenes/Actors/Player/ui/ui_container_class.gd" id="1_8cd0u"]
+[ext_resource type="Texture2D" uid="uid://dnl58kbb8abn0" path="res://Assets/Single/UI/Player/empty_heart.png" id="1_e2clq"]
+[ext_resource type="Texture2D" uid="uid://whr2byeqyf26" path="res://Assets/Single/UI/Player/full_heart.png" id="2_ycvpa"]
+[ext_resource type="Texture2D" uid="uid://m51lug1us507" path="res://Assets/Single/UI/Player/half_heart.png" id="3_qaul6"]
+
+[resource]
+script = ExtResource("1_8cd0u")
+full_container = ExtResource("2_ycvpa")
+half_container = ExtResource("3_qaul6")
+empty_container = ExtResource("1_e2clq")
+type = "hp"
+metadata/_custom_type_script = "uid://vnxjfhe2a0u8"

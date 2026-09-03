@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://pvi2lcb0elpo"]
+
+[ext_resource type="Script" uid="uid://xem7yt0kp5s0" path="res://Scenes/UI/Inventory/inventory_slot.gd" id="1_g5xbf"]
+[ext_resource type="Texture2D" uid="uid://46kcymbp1wmo" path="res://Assets/Inventory/Sprite-0001.png" id="1_xx67k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvkr4"]
+font_size = 30
+shadow_size = 0
+
+[node name="InventorySlot" type="Control" unique_id=1762239001]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(5, 5)
+script = ExtResource("1_g5xbf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1083167623]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.25100002
+anchor_right = 0.75500005
+anchor_bottom = 0.68700004
+offset_left = -0.05000305
+offset_top = -0.05000305
+offset_right = -0.05001068
+offset_bottom = -0.05001068
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1680215572]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("1_xx67k")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=1410099747]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.748
+anchor_right = 1.026
+anchor_bottom = 1.0
+offset_left = 4.3999996
+offset_right = -10.100021
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_cvkr4")
+horizontal_alignment = 2
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

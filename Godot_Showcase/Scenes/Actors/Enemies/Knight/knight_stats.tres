@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="actor_stats_class" format=3 uid="uid://b63lisjqwv8r1"]
+
+[ext_resource type="Script" uid="uid://b7alinv7lunqu" path="res://Scenes/Actors/Class/actor_stats_class.gd" id="1_dh8tr"]
+
+[resource]
+script = ExtResource("1_dh8tr")
+name = "Knight"
+health = 10
+health_max = 10
+mana = 10
+mana_max = 10
+stamina = 10
+stamina_max = 10
+speed = 30.0
+armour = 10.0
+metadata/_custom_type_script = "uid://b7alinv7lunqu"

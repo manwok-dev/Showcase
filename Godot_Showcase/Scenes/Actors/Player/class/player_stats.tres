@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="player_stats" format=3 uid="uid://dqv3sbkvjupuj"]
+
+[ext_resource type="Script" uid="uid://dxkogihasuy41" path="res://Scenes/Actors/Player/class/player_stats_class.gd" id="1_lu5i6"]
+
+[resource]
+script = ExtResource("1_lu5i6")
+name = "Player"
+health = 10
+health_max = 10
+mana = 8
+mana_max = 10
+stamina = 5
+stamina_max = 15
+speed = 30.0
+metadata/_custom_type_script = "uid://dxkogihasuy41"

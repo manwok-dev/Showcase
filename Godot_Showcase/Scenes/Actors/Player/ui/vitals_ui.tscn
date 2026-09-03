@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://daxuu6df4iqka"]
+
+[ext_resource type="Script" uid="uid://5b21wr3t15oc" path="res://Scenes/Actors/Player/ui/vitals_ui.gd" id="1_l326b"]
+[ext_resource type="Resource" uid="uid://co5g5hg7vwshj" path="res://Scenes/Actors/Player/ui/mana_container_res.tres" id="2_l326b"]
+[ext_resource type="Resource" uid="uid://dqv3sbkvjupuj" path="res://Scenes/Actors/Player/class/player_stats.tres" id="3_h7wqo"]
+
+[node name="VitalsUI" type="Control" unique_id=1973986513]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l326b")
+txtr_res = ExtResource("2_l326b")
+player_stat = ExtResource("3_h7wqo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=573761934]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1062926289]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer" unique_id=1154115275]
+layout_mode = 2
+columns = 10

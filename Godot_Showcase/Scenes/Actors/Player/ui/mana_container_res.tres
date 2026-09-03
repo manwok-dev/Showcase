@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ui_container_class" format=3 uid="uid://co5g5hg7vwshj"]
+
+[ext_resource type="Script" uid="uid://vnxjfhe2a0u8" path="res://Scenes/Actors/Player/ui/ui_container_class.gd" id="1_kj44y"]
+[ext_resource type="Texture2D" uid="uid://cjfg6x0kb7s4c" path="res://Assets/Single/UI/Player/crystal_empty.png" id="1_uj8v7"]
+[ext_resource type="Texture2D" uid="uid://cw6euh5u53igt" path="res://Assets/Single/UI/Player/mana_crystal_full.png" id="2_j8ilj"]
+[ext_resource type="Texture2D" uid="uid://de0mfrr1voms6" path="res://Assets/Single/UI/Player/mana_crystal_half.png" id="3_7tpwm"]
+
+[resource]
+script = ExtResource("1_kj44y")
+full_container = ExtResource("2_j8ilj")
+half_container = ExtResource("3_7tpwm")
+empty_container = ExtResource("1_uj8v7")
+type = "mp"
+metadata/_custom_type_script = "uid://vnxjfhe2a0u8"

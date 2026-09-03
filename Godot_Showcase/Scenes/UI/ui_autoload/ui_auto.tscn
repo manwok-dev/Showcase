@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://no31mahsghss"]
+
+[ext_resource type="Script" uid="uid://c0ryab6jqqhuo" path="res://Scenes/UI/ui_autoload/ui_auto.gd" id="1_fbo3s"]
+[ext_resource type="PackedScene" uid="uid://b845wkg2ldojn" path="res://Scenes/UI/Inventory/inventory.tscn" id="1_h2qpm"]
+[ext_resource type="PackedScene" uid="uid://daxuu6df4iqka" path="res://Scenes/Actors/Player/ui/vitals_ui.tscn" id="2_g8jgy"]
+[ext_resource type="Resource" uid="uid://d04kh76tyhw6u" path="res://Scenes/Actors/Player/ui/health_container_res.tres" id="3_6leg4"]
+[ext_resource type="Resource" uid="uid://blodialhn84q0" path="res://Scenes/Actors/Player/ui/stamina_container_res.tres" id="4_5q2qd"]
+[ext_resource type="Script" uid="uid://blkl0qgaxv8vp" path="res://Scenes/UI/Inventory/inventory_manager.gd" id="5_p1dx6"]
+
+[node name="UI_Auto" type="CanvasLayer" unique_id=1725972523 node_paths=PackedStringArray("inventory_manager")]
+script = ExtResource("1_fbo3s")
+inventory_manager = NodePath("InventoryManager")
+
+[node name="HealthUI" parent="." unique_id=1973986513 groups=["stat_ui"] instance=ExtResource("2_g8jgy")]
+txtr_res = ExtResource("3_6leg4")
+
+[node name="StaminaUI" parent="." unique_id=258699639 groups=["stat_ui"] instance=ExtResource("2_g8jgy")]
+anchors_preset = -1
+anchor_top = 0.9
+anchor_bottom = 0.9
+grow_vertical = 0
+txtr_res = ExtResource("4_5q2qd")
+
+[node name="ManaUI" parent="." unique_id=1218841773 groups=["stat_ui"] instance=ExtResource("2_g8jgy")]
+anchors_preset = -1
+anchor_top = 0.8
+anchor_bottom = 0.8
+grow_vertical = 0
+
+[node name="InventoryManager" type="Node" parent="." unique_id=1829669838 node_paths=PackedStringArray("player_inventory")]
+script = ExtResource("5_p1dx6")
+player_inventory = NodePath("PlayerInventory")
+
+[node name="PlayerInventory" parent="InventoryManager" unique_id=924563963 instance=ExtResource("1_h2qpm")]

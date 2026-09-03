@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ui_container_class" format=3 uid="uid://blodialhn84q0"]
+
+[ext_resource type="Texture2D" uid="uid://cjfg6x0kb7s4c" path="res://Assets/Single/UI/Player/crystal_empty.png" id="1_40bmq"]
+[ext_resource type="Script" uid="uid://vnxjfhe2a0u8" path="res://Scenes/Actors/Player/ui/ui_container_class.gd" id="1_s7xxy"]
+[ext_resource type="Texture2D" uid="uid://8auogjfvoywi" path="res://Assets/Single/UI/Player/stamina_crystal_full.png" id="2_lvrnh"]
+[ext_resource type="Texture2D" uid="uid://bfk1k57uog2iq" path="res://Assets/Single/UI/Player/stamina_crystal_half.png" id="3_wn7nm"]
+
+[resource]
+script = ExtResource("1_s7xxy")
+full_container = ExtResource("2_lvrnh")
+half_container = ExtResource("3_wn7nm")
+empty_container = ExtResource("1_40bmq")
+type = "sp"
+metadata/_custom_type_script = "uid://vnxjfhe2a0u8"
