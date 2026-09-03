@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="effect_type_class" format=3 uid="uid://bojji32e3rolp"]
+
+[ext_resource type="Script" uid="uid://bollyawwb37o" path="res://Resources/Effects/effect_type_class.gd" id="1_hq3jc"]
+[ext_resource type="Texture2D" uid="uid://c1wrton3jq7ys" path="res://Assets/Single/Environment/fire.png" id="2_hq3jc"]
+
+[resource]
+script = ExtResource("1_hq3jc")
+name = "Fire Damage"
+txtr = ExtResource("2_hq3jc")
+type = "hp"
+subtype = "current"
+ot_amount = -2
+dot_duration = 3.0
+dot_tick_rate = 1.0
+dot_tick_amount = -1.0
+metadata/_custom_type_script = "uid://bollyawwb37o"

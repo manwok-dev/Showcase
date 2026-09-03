@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="effect_type_class" format=3 uid="uid://hfbjp524og71"]
+
+[ext_resource type="Script" uid="uid://bollyawwb37o" path="res://Resources/Effects/effect_type_class.gd" id="1_dxseu"]
+[ext_resource type="Texture2D" uid="uid://bikargura4jqb" path="res://Assets/Single/Items/Sword.png" id="1_qit1n"]
+
+[resource]
+script = ExtResource("1_dxseu")
+name = "Flat Damage"
+txtr = ExtResource("1_qit1n")
+type = "hp"
+subtype = "current"
+ot_amount = -5
+metadata/_custom_type_script = "uid://bollyawwb37o"
