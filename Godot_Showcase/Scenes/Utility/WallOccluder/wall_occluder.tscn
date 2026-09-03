@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bky3ia8b6fjoi"]
+
+[ext_resource type="Script" uid="uid://dub8xos80yx3k" path="res://Scenes/Utility/WallOccluder/wall_occluder.gd" id="1_do3ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_do3ou"]
+resource_local_to_scene = true
+size = Vector2(127, 20)
+
+[node name="WallOccluder" type="Node2D" unique_id=499524855]
+script = ExtResource("1_do3ou")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=15095385]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2112365670]
+shape = SubResource("RectangleShape2D_do3ou")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

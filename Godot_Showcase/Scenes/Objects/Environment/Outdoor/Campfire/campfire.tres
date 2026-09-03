@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="object_stats" format=3 uid="uid://d2qharym60v1v"]
+
+[ext_resource type="Resource" uid="uid://bojji32e3rolp" path="res://Resources/Effects/fire.tres" id="1_v32mw"]
+[ext_resource type="Script" uid="uid://wfomlob3auuy" path="res://Resources/Object Stats/object_stats_class.gd" id="2_2d5vu"]
+
+[resource]
+script = ExtResource("2_2d5vu")
+health = 5
+effect = ExtResource("1_v32mw")
+metadata/_custom_type_script = "uid://wfomlob3auuy"

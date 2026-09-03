@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://c4xsuyttdxaqd"]
+
+[ext_resource type="Script" uid="uid://b5vqmue1pt5un" path="res://Scenes/Objects/Item/item_class.gd" id="1_72100"]
+[ext_resource type="Resource" uid="uid://hfbjp524og71" path="res://Resources/Effects/flat_damage.tres" id="1_trppg"]
+[ext_resource type="Texture2D" uid="uid://c4ju8oo1ai0dm" path="res://Assets/Single/Items/Shield.png" id="2_trppg"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_72100")
+name = "Shield"
+texture = ExtResource("2_trppg")
+max_stack = 3
+is_pickable = true
+effect = ExtResource("1_trppg")
+has_pickup_effect = true

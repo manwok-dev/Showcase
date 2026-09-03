@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cu158ttakyba"]
+
+[node name="Timer" type="Timer" unique_id=411778789]

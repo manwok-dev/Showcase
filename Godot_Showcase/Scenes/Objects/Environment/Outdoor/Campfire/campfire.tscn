@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bm0je34j765ej"]
+
+[ext_resource type="Script" uid="uid://dl6iqu1remkuy" path="res://Scenes/Objects/Environment/Outdoor/Campfire/campfire.gd" id="1_fv3uw"]
+[ext_resource type="Resource" uid="uid://d2qharym60v1v" path="res://Scenes/Objects/Environment/Outdoor/Campfire/campfire.tres" id="2_6bph4"]
+[ext_resource type="Texture2D" uid="uid://4ie5rdgfhji4" path="res://Assets/Single/Environment/campfire_on.png" id="2_llr66"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_llr66"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spvmv"]
+radius = 4.0
+height = 14.0
+
+[node name="Campfire" type="Node2D" unique_id=980461197]
+scale = Vector2(2, 2)
+script = ExtResource("1_fv3uw")
+stats = ExtResource("2_6bph4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862669560]
+position = Vector2(0, -3)
+texture = ExtResource("2_llr66")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1371703461 groups=["Campfire"]]
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1095521997]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_llr66")
+debug_color = Color(0.69713026, 0, 0.19648737, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1950018779 groups=["Campfire"]]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1354764671]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_spvmv")
+debug_color = Color(0.1984278, 0.6415335, 0, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

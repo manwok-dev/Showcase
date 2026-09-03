@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ipxtx3syynn8"]
+
+[ext_resource type="Script" uid="uid://c58i1dtnhhpsa" path="res://Scenes/Objects/Environment/Both/chest.gd" id="1_bvt21"]
+[ext_resource type="Texture2D" uid="uid://b253axvde81hb" path="res://Assets/Single/Environment/chest.png" id="1_lxo0p"]
+[ext_resource type="Script" uid="uid://b5vqmue1pt5un" path="res://Scenes/Objects/Item/item_class.gd" id="2_6dqyo"]
+[ext_resource type="Resource" uid="uid://c4xsuyttdxaqd" path="res://Scenes/Objects/Item/Weapons/shield.tres" id="3_75ny5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lxo0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvt21"]
+size = Vector2(38, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7gun"]
+radius = 19.0
+height = 66.0
+
+[node name="Chest" type="StaticBody2D" unique_id=1222923431]
+collision_layer = 16
+physics_material_override = SubResource("PhysicsMaterial_lxo0p")
+script = ExtResource("1_bvt21")
+rows = 3
+columns = 3
+items_array = Array[ExtResource("2_6dqyo")]([ExtResource("3_75ny5")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=213452782]
+position = Vector2(0, -10)
+texture = ExtResource("1_lxo0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248898231]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_bvt21")
+
+[node name="InteractArea" type="Area2D" parent="." unique_id=781493827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=1962811039]
+position = Vector2(0, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d7gun")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

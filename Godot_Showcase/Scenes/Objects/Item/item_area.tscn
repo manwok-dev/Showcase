@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bdoob4cq6depa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qj4yj"]
+resource_local_to_scene = true
+
+[node name="ItemArea" type="Area2D" unique_id=1974295804]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288378135]
+shape = SubResource("CapsuleShape2D_qj4yj")

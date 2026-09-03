@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bqxu8ojjltmo6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3otbs"]
+resource_local_to_scene = true
+radius = 6.0
+height = 34.0
+
+[node name="Hurtbox" type="Marker2D" unique_id=1463712540]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=300073172]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=631586056]
+shape = SubResource("CapsuleShape2D_3otbs")
+debug_color = Color(0.32267833, 0.6248632, 0, 0.41960785)

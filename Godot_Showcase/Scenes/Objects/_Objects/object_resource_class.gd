@@ -1,0 +1,1 @@
+class_name object_resource extends Resource

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dxvqr7p0glc4m"]
+
+[ext_resource type="Script" uid="uid://wscgpsgir6xg" path="res://Scenes/Utility/Main/main.gd" id="1_xggng"]
+[ext_resource type="PackedScene" uid="uid://c6nrg2aqlf3d0" path="res://Scenes/Actors/Player/player.tscn" id="6_xtl6h"]
+[ext_resource type="PackedScene" uid="uid://cy7x54mlp01e0" path="res://Scenes/Objects/Item/item.tscn" id="7_seyot"]
+[ext_resource type="Script" uid="uid://b5vqmue1pt5un" path="res://Scenes/Objects/Item/item_class.gd" id="8_2edqs"]
+[ext_resource type="Resource" uid="uid://bojji32e3rolp" path="res://Resources/Effects/fire.tres" id="8_xggng"]
+[ext_resource type="Texture2D" uid="uid://bikargura4jqb" path="res://Assets/Single/Items/Sword.png" id="9_dlw2h"]
+[ext_resource type="Resource" uid="uid://dqv3sbkvjupuj" path="res://Scenes/Actors/Player/class/player_stats.tres" id="10_xggng"]
+[ext_resource type="PackedScene" uid="uid://bisrw24cfbrgp" path="res://Scenes/Actors/Enemies/enemy.tscn" id="11_2xcik"]
+[ext_resource type="PackedScene" uid="uid://deqgyswseduco" path="res://Scenes/Utility/TileSets/tilemap.tscn" id="11_6w5wp"]
+[ext_resource type="Resource" uid="uid://hfbjp524og71" path="res://Resources/Effects/flat_damage.tres" id="11_v6l8u"]
+[ext_resource type="Texture2D" uid="uid://c4ju8oo1ai0dm" path="res://Assets/Single/Items/Shield.png" id="13_2xcik"]
+
+[sub_resource type="Resource" id="Resource_v6l8u"]
+resource_local_to_scene = true
+script = ExtResource("8_2edqs")
+name = "Shield"
+texture = ExtResource("13_2xcik")
+max_stack = 3
+is_pickable = true
+effect = ExtResource("11_v6l8u")
+has_pickup_effect = true
+
+[sub_resource type="Resource" id="Resource_6w5wp"]
+resource_local_to_scene = true
+script = ExtResource("8_2edqs")
+name = "Sword"
+texture = ExtResource("9_dlw2h")
+is_pickable = true
+effect = ExtResource("8_xggng")
+has_pickup_effect = true
+
+[node name="Main" type="Node2D" unique_id=1991678717]
+script = ExtResource("1_xggng")
+
+[node name="Shield" parent="." unique_id=177046278 instance=ExtResource("7_seyot")]
+position = Vector2(-296, -120)
+resource = SubResource("Resource_v6l8u")
+player_stat = ExtResource("10_xggng")
+
+[node name="Sword" parent="." unique_id=918388587 instance=ExtResource("7_seyot")]
+position = Vector2(-234, -16)
+resource = SubResource("Resource_6w5wp")
+player_stat = ExtResource("10_xggng")
+
+[node name="Player" parent="." unique_id=584294701 groups=["Player"] instance=ExtResource("6_xtl6h")]
+position = Vector2(47, 144)
+
+[node name="Tilemap" parent="." unique_id=1825640973 instance=ExtResource("11_6w5wp")]
+z_index = -100
+
+[node name="Enemy" parent="." unique_id=686188719 instance=ExtResource("11_2xcik")]
+position = Vector2(270, 54)
+
+[editable path="Player"]
+[editable path="Player/AnimationPlayerRoot"]

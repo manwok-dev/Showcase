@@ -1,0 +1,1 @@
+class_name eventbus_class extends Node

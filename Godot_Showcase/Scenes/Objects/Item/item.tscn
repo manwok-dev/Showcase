@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cy7x54mlp01e0"]
+
+[ext_resource type="Script" uid="uid://bahhwgbs25ivt" path="res://Scenes/Objects/Item/Item.gd" id="1_nhojl"]
+[ext_resource type="Resource" uid="uid://hi6525ea3ic7" path="res://Scenes/Objects/Item/Weapons/sword.tres" id="2_hvuqc"]
+[ext_resource type="Resource" uid="uid://dqv3sbkvjupuj" path="res://Scenes/Actors/Player/class/player_stats.tres" id="3_hcbwa"]
+[ext_resource type="Texture2D" uid="uid://bikargura4jqb" path="res://Assets/Single/Items/Sword.png" id="4_vf60h"]
+
+[node name="Item" type="Node2D" unique_id=177046278 groups=["Items"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_nhojl")
+resource = ExtResource("2_hvuqc")
+player_stat = ExtResource("3_hcbwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1508980886]
+texture = ExtResource("4_vf60h")

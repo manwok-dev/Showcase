@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="item_resource" format=3 uid="uid://hi6525ea3ic7"]
+
+[ext_resource type="Resource" uid="uid://bojji32e3rolp" path="res://Resources/Effects/fire.tres" id="1_60xcn"]
+[ext_resource type="Script" uid="uid://b5vqmue1pt5un" path="res://Scenes/Objects/Item/item_class.gd" id="1_jkkk8"]
+[ext_resource type="Texture2D" uid="uid://bikargura4jqb" path="res://Assets/Single/Items/Sword.png" id="2_60xcn"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_jkkk8")
+name = "Sword"
+texture = ExtResource("2_60xcn")
+is_pickable = true
+effect = ExtResource("1_60xcn")
+has_pickup_effect = true

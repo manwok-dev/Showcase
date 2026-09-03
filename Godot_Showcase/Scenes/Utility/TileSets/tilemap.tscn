@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://deqgyswseduco"]
+
+[ext_resource type="Script" uid="uid://ctu3344qliw82" path="res://Scenes/Utility/TileSets/tilemap.gd" id="1_l7eav"]
+[ext_resource type="TileSet" uid="uid://b3ales8l7okk0" path="res://new_tile_set.tres" id="2_0wfi5"]
+[ext_resource type="Shader" uid="uid://dn505rqacc357" path="res://Scenes/Utility/TileSets/wall_see_through.gdshader" id="2_jpxs4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7eav"]
+shader = ExtResource("2_jpxs4")
+shader_parameter/player_pos = Vector2(0, 0)
+shader_parameter/max_distance = 100.0
+shader_parameter/player_behind = false
+
+[node name="Tilemap" type="Node2D" unique_id=1825640973]
+y_sort_enabled = true
+scale = Vector2(3, 3)
+script = ExtResource("1_l7eav")
+
+[node name="GroundTileMapLayer" type="TileMapLayer" parent="." unique_id=568853759]
+z_index = -2
+y_sort_enabled = true
+tile_set = ExtResource("2_0wfi5")
+
+[node name="ShadowTileMapLayer" type="TileMapLayer" parent="." unique_id=2132293166]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("2_0wfi5")
+
+[node name="IndoorTileMapLayer" type="TileMapLayer" parent="." unique_id=1530614310]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("2_0wfi5")
+
+[node name="WallTileMapLayer" type="TileMapLayer" parent="." unique_id=1518595500]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_l7eav")
+tile_set = ExtResource("2_0wfi5")
+
+[node name="BlackTileMapLayer" type="TileMapLayer" parent="." unique_id=242043162]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_l7eav")
+tile_set = ExtResource("2_0wfi5")
